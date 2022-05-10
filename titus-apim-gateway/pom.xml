@@ -9,11 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>titus-apim-gateway</artifactId>
+    <name>titus-apim-gateway</name>
 
     <properties>
         <start-class>com.zestic.apim.gateway.Application</start-class>
-
-        <titus.apim.repository.mongodb.version>1.0-SNAPSHOT</titus.apim.repository.mongodb.version>
     </properties>
 
     <dependencies>

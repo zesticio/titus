@@ -16,18 +16,16 @@
  * limitations under the License.
  */
 
-package com.zestic.apim.gateway;
+package com.zestic.apim.repository.mongodb.entity;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@SpringBootApplication
-public class Application {
-
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.LogManager.getLogger(Application.class);
-
-    public static void main(String[] args) {
-        logger.info("Starting API Gateway");
-        SpringApplication.run(Application.class, args);
-    }
+@Data
+@Builder
+@Document(collection = "metadatas")
+public class Metadata {
 }

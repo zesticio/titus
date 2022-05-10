@@ -16,18 +16,17 @@
  * limitations under the License.
  */
 
-package com.zestic.apim.gateway;
+package com.zestic.apim.repository.mongodb.repository;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.zestic.apim.repository.mongodb.entity.Api;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.stereotype.Repository;
 
-@SpringBootApplication
-public class Application {
+import java.util.List;
 
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.LogManager.getLogger(Application.class);
+@Repository
+public interface ApiRepository extends MongoRepository<Api, Long> {
 
-    public static void main(String[] args) {
-        logger.info("Starting API Gateway");
-        SpringApplication.run(Application.class, args);
-    }
+    List<Api> findByMethod(String method);
 }
