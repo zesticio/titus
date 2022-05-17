@@ -25,7 +25,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application {
 
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.LogManager.getLogger(TestController.class);
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
         logger.info("Starting REST API");
