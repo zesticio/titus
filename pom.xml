@@ -21,10 +21,10 @@
         <titus.apim.repository.mongodb.version>1.0-SNAPSHOT</titus.apim.repository.mongodb.version>
 
         <com.zestic.parent.version>1.0.0</com.zestic.parent.version>
-        <com.zestic.apim.repository.mongodb.version>1.0-SNAPSHOT</com.zestic.apim.repository.mongodb.version>
-        <com.zestic.apim.repository.redis.version>1.0-SNAPSHOT</com.zestic.apim.repository.redis.version>
-        <com.zestic.apim.rest.version>1.0-SNAPSHOT</com.zestic.apim.rest.version>
-        <com.zestic.apim.security.version>1.0-SNAPSHOT</com.zestic.apim.security.version>
+        <com.zestic.apim.repository.mongodb.version>1.0.0</com.zestic.apim.repository.mongodb.version>
+        <com.zestic.apim.repository.redis.version>1.0.0</com.zestic.apim.repository.redis.version>
+        <com.zestic.apim.rest.version>1.0.0</com.zestic.apim.rest.version>
+        <com.zestic.apim.security.version>1.0.0</com.zestic.apim.security.version>
         <com.zestic.springboot.common.version>1.0</com.zestic.springboot.common.version>
     </properties>
 

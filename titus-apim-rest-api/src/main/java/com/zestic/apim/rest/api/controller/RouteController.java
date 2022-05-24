@@ -45,20 +45,7 @@ public class RouteController {
     }
 
     /**
-     * list all users
-     *
-     * @return
-     */
-    @GetMapping(path = "")
-    @ApiOperation(value = "Returns all routes configured", notes = "Pagination also supported using limit and page")
-    public ResponseEntity<Result> find(@RequestParam Optional<Integer> limit,
-                                       @RequestParam Optional<Integer> page) {
-        Result response = service.findAll();
-        return new ResponseEntity<Result>(response, HttpStatus.valueOf(response.getCode()));
-    }
-
-    /**
-     * Create a new user
+     * Add a new route
      *
      * @return
      */
@@ -68,6 +55,19 @@ public class RouteController {
                                          @ApiParam(name = "Create route", value = "Create route value", required = true)
                                          @CreateRouteValidator Route route) {
         Result response = service.create(route);
+        return new ResponseEntity<Result>(response, HttpStatus.valueOf(response.getCode()));
+    }
+
+    /**
+     * list all users
+     *
+     * @return
+     */
+    @GetMapping(path = "")
+    @ApiOperation(value = "Returns all routes configured", notes = "Pagination also supported using limit and page")
+    public ResponseEntity<Result> find(@RequestParam Optional<Integer> limit,
+                                       @RequestParam Optional<Integer> page) {
+        Result response = service.findAll();
         return new ResponseEntity<Result>(response, HttpStatus.valueOf(response.getCode()));
     }
 

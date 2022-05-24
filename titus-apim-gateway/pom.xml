@@ -25,14 +25,8 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zestic.apim</groupId>
+            <groupId>com.zestic.apim.repository</groupId>
             <artifactId>titus-apim-repository-mongodb</artifactId>
-            <version>${titus.apim.repository.mongodb.version}</version>
         </dependency>
     </dependencies>
 
