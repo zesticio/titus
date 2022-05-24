@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-package com.zestic.apim.gateway.config;
+package com.zestic.apim.rest.api;
 
-import org.springframework.context.annotation.Configuration;
+public class Constants {
 
-@Configuration
-public class GatewayConfiguration {
-
+    public static final String END_POINT_V1_0 = "/v1.0";
 }

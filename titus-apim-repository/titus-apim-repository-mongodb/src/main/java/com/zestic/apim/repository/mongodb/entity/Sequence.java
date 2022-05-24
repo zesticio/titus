@@ -15,22 +15,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zestic.apim.repository.mongodb.repository;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
-import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+package com.zestic.apim.repository.mongodb.entity;
 
-@Configuration
-@ComponentScan
-@EnableMongoRepositories
-@Profile("!test")
-public class RepositoryConfiguration extends AbstractMongoClientConfiguration {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Document(collection = "sequences")
+public class Sequence {
+
+    @Id
+    private String id;
+    private long seq;
 
     @Override
-    protected String getDatabaseName() {
-        return null;
+    public String toString() {
+        return "Sequence{" +
+                "id='" + id + '\'' +
+                ", seq=" + seq +
+                '}';
     }
 }

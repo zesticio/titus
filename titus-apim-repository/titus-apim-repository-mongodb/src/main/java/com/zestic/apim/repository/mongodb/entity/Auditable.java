@@ -18,6 +18,7 @@
 
 package com.zestic.apim.repository.mongodb.entity;
 
+import com.zestic.common.entity.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-abstract class Auditable {
+abstract class Auditable extends Entity {
 
     private Date createdAt;
     private Date updatedAt;

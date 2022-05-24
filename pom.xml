@@ -11,13 +11,21 @@
     <groupId>com.zestic.apim</groupId>
     <artifactId>titus-api-management</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>titus-api-management</name>
 
     <properties>
-        <zestic.common.version>1.0</zestic.common.version>
+        <tests.skip>true</tests.skip>
 
+        <zestic.common.version>1.0</zestic.common.version>
         <titus.apim.repository.mongodb.version>1.0-SNAPSHOT</titus.apim.repository.mongodb.version>
+
+        <com.zestic.parent.version>1.0.0</com.zestic.parent.version>
+        <com.zestic.apim.repository.mongodb.version>1.0-SNAPSHOT</com.zestic.apim.repository.mongodb.version>
+        <com.zestic.apim.repository.redis.version>1.0-SNAPSHOT</com.zestic.apim.repository.redis.version>
+        <com.zestic.apim.rest.version>1.0-SNAPSHOT</com.zestic.apim.rest.version>
+        <com.zestic.apim.security.version>1.0-SNAPSHOT</com.zestic.apim.security.version>
+        <com.zestic.springboot.common.version>1.0</com.zestic.springboot.common.version>
     </properties>
 
     <modules>
@@ -26,6 +34,41 @@
         <module>titus-apim-security</module>
         <module>titus-apim-rest-api</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zestic.springboot.common</groupId>
+                <artifactId>spring-boot-starter-common</artifactId>
+                <version>${com.zestic.springboot.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic.apim.repository</groupId>
+                <artifactId>titus-apim-repository-mongodb</artifactId>
+                <version>${com.zestic.apim.repository.mongodb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic.apim.repository</groupId>
+                <artifactId>titus-apim-repository-redis</artifactId>
+                <version>${com.zestic.apim.repository.redis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic.apim</groupId>
+                <artifactId>titus-apim-rest-api</artifactId>
+                <version>${com.zestic.apim.rest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic.apim</groupId>
+                <artifactId>titus-apim-security</artifactId>
+                <version>${com.zestic.apim.security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>common</artifactId>
+                <version>${com.zestic.common.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <pluginManagement>

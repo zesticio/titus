@@ -21,6 +21,7 @@ package com.zestic.apim.rest.api;
 import com.zestic.apim.rest.api.controller.TestController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class Application {
@@ -28,7 +29,7 @@ public class Application {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
-        logger.info("Starting REST API");
+        logger.info("Starting APIM Route Management Interface");
         SpringApplication.run(Application.class, args);
     }
 }

@@ -17,6 +17,7 @@
  */
 package com.zestic.apim.repository.mongodb.entity;
 
+import com.zestic.springboot.common.validation.Validatable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,18 +25,29 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Objects;
+import java.util.stream.Stream;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "api_routes")
-public class Api extends Auditable {
+public class Route extends Auditable implements Validatable {
 
     @Id
     private Long id;
 
+    private String name;
     private String path;
     private String method;
     private String uri;
+
+    @Override
+    public boolean isValid() {
+        boolean valid = Stream.of(name, path, method, uri).allMatch(Objects::isNull);
+        valid = isValidUri(uri) && valid;
+        return valid;
+    }
 
     @Override
     public String toString() {

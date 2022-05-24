@@ -18,15 +18,15 @@
 
 package com.zestic.apim.repository.mongodb.repository;
 
-import com.zestic.apim.repository.mongodb.entity.Api;
+import com.zestic.apim.repository.mongodb.entity.Route;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface ApiRepository extends MongoRepository<Api, Long> {
+public interface RouteRepository extends MongoRepository<Route, Long> {
 
-    List<Api> findByMethod(String method);
+    List<Route> findByMethod(String method);
+    Boolean existsByName(String name);
 }

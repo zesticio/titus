@@ -1,0 +1,20 @@
+#port number here will start from 3
+version: '3'
+services:
+    mongodb:
+        image: 'mongo:4.2'
+        restart: always
+        container_name: 'mongodb'
+        volumes:
+            - ./data/mongodb/db:/data/db
+            - ./data/mongodb/dump:/dump
+        environment:
+            TZ: Asia/Kolkata
+            MONGO_INITDB_ROOT_USERNAME: titus
+            MONGO_INITDB_ROOT_PASSWORD: TitusRW
+            MONGO_INITDB_DATABASE: apim
+        ports:
+            - "37017:27017"
+networks:
+    titus-network:
+        driver: bridge

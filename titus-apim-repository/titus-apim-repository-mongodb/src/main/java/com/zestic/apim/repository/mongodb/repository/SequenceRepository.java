@@ -16,9 +16,16 @@
  * limitations under the License.
  */
 
-package com.zestic.apim.rest.api.common;
+package com.zestic.apim.repository.mongodb.repository;
 
-public class Constants {
+import com.zestic.apim.repository.mongodb.entity.Route;
+import com.zestic.apim.repository.mongodb.entity.Sequence;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-    public static final String END_POINT_V1_0 = "/v1.0";
+import java.util.List;
+
+@Repository
+public interface SequenceRepository extends MongoRepository<Sequence, String> {
+
 }

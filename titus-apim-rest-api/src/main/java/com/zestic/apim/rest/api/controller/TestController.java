@@ -18,9 +18,8 @@
 
 package com.zestic.apim.rest.api.controller;
 
-import com.zestic.apim.rest.api.common.Constants;
+import com.zestic.apim.rest.api.Constants;
 import com.zestic.common.entity.Result;
-import com.zestic.common.exception.ApplicationRuntimeException;
 import com.zestic.common.utils.HTTPErrorCodes;
 import com.zestic.springboot.common.ratelimit.RateLimit;
 import org.springframework.http.HttpStatus;
